@@ -27,13 +27,19 @@ class App extends React.Component {
         throw new Error(err);
       });
   };
+
   Loading = () => {
     return <h1>The Data is loading...</h1>;
   };
+
   NasaCard = () => {
     return (
       <div>
-        <h1>{this.state.nasaData[0].id}</h1>
+        <h1>Taken from: {`'${this.state.nasaData[0].rover.name}'`}</h1>
+        <p>
+          On {this.state.nasaData[0].earth_date} with the{" "}
+          {this.state.nasaData[0].camera.full_name}
+        </p>
         <img src={this.state.nasaData[0].img_src} />
       </div>
     );
